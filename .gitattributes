@@ -1,0 +1,4 @@
+# Keep Linux line endings so Docker builds behave the same on Windows
+* text=auto eol=lf
+*.png binary
+*.jpg binary

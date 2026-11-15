@@ -1,0 +1,66 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.40.0"
+  },
+  "schemaVersion": 16,
+  "id": "leave-approval",
+  "type": "default",
+  "components": [
+    {
+      "id": "Text_Heading",
+      "type": "text",
+      "text": "## Leave approval\nReview the request below, then approve or reject it."
+    },
+    {
+      "id": "Field_EmployeeEmail",
+      "type": "textfield",
+      "label": "Employee email",
+      "key": "employeeEmail",
+      "readonly": true
+    },
+    {
+      "id": "Field_LeaveType",
+      "type": "textfield",
+      "label": "Leave type",
+      "key": "leaveType",
+      "readonly": true
+    },
+    {
+      "id": "Field_StartDate",
+      "type": "textfield",
+      "label": "From",
+      "key": "startDate",
+      "readonly": true
+    },
+    {
+      "id": "Field_EndDate",
+      "type": "textfield",
+      "label": "To",
+      "key": "endDate",
+      "readonly": true
+    },
+    {
+      "id": "Field_Days",
+      "type": "number",
+      "label": "Working days",
+      "key": "days",
+      "readonly": true
+    },
+    {
+      "id": "Field_Approved",
+      "type": "checkbox",
+      "label": "Approve this request",
+      "key": "approved",
+      "defaultValue": false
+    },
+    {
+      "id": "Field_ManagerComment",
+      "type": "textarea",
+      "label": "Comment",
+      "key": "managerComment"
+    }
+  ]
+}

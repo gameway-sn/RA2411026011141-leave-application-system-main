@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  error:
+    # Send the reason of 409/503 errors to the React frontend
+    include-message: always
+
+spring:
+  application:
+    name: leave-backend
+  datasource:
+    # Local development: H2 file database in backend/data/
+    # Docker: DB_URL / DB_USERNAME / DB_PASSWORD point to the PostgreSQL container
+    url: ${DB_URL:jdbc:h2:file:./data/leavedb}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: ${H2_CONSOLE_ENABLED:true}
+
+camunda:
+  client:
+    mode: self-managed
+    # The lightweight Camunda 8.10 setup in this repo has an unprotected API,
+    # so the client needs no credentials.
+    auth:
+      method: none
+    grpc-address: ${CAMUNDA_GRPC_ADDRESS:http://localhost:26500}
+    rest-address: ${CAMUNDA_REST_ADDRESS:http://localhost:8080}
+
+logging:
+  level:
+    com.example.leave: INFO
